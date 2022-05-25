@@ -16,6 +16,9 @@ const Navbar = () => {
         <a>Music</a>
       </div>
       <div>
+        <a>Video</a>
+      </div>
+      <div>
         <a>Settings</a>
       </div>
     </nav>
