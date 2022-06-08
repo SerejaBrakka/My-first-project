@@ -1,0 +1,8 @@
+.posts {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.postsBlock {
+  padding: 10px;
+}

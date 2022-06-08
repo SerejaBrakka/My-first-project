@@ -1,27 +1,25 @@
 import React from "react";
+import classes from "./ProfileInfo.module.css";
 
-const ProfileContent = () => {
+
+const ProfileInfo = () => {
   return (
-    <div className="content">
+    <div>
       <div>
         <img
           src="https://img.championat.com/c/1200x900/news/big/r/k/vybiraem-idealnyj-gorod-dlya-gta-6_16245545132074035903.jpg"
-          className="banner"
+          className={classes.banner}
         ></img>
       </div>
-      <div>
+      <div className={classes.descriptionBlock}>
         <img
           src="https://www.w3schools.com/howto/img_avatar2.png"
-          className="ava"
-        ></img>{" "}
+          className={classes.ava}
+        ></img>
         + description
       </div>
-      <div>My posts</div>
-      <div>New posts</div>
-      <div>Post1</div>
-      <div>Post2</div>
     </div>
   );
 };
 
-export default ProfileContent;
+export default ProfileInfo;

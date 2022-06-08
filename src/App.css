@@ -6,34 +6,10 @@
   grid-template-areas:
     "header header"
     "nav content";
-  grid-gap: 10px;
+  background-color: blue;
 }
 
-.nav {
-  grid-area: nav;
-  color: black;
-  background-color: green;
-}
-
-.header {
-  grid-area: header;
-  color: black;
-  background-color: green;
-}
-.header img {
-  width: 70px;
-  height: 60px;
-}
-
-.content {
+.app-wrapper-content {
   grid-area: content;
-  color: black;
-}
-.banner {
-  width: 50%;
-  height: 200px;
-}
-.ava {
-  width: 100px;
-  height: 100px;
+  color: white;
 }
