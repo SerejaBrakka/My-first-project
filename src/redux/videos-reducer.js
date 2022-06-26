@@ -15,16 +15,22 @@ let initialState = {
 const videosReducer = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_NEW_COMMENT:
-      state.newCommentText = action.newCommentText;
-      return state;
+      return {
+        ...state,
+        newCommentText: action.newCommentText,
+      };
+
     case ADD_COMMENT:
       let comment = {
         id: 3,
         comment: state.newCommentText,
       };
-      state.comments.push(comment);
-      state.newCommentText = "";
-      return state;
+      return {
+        ...state,
+        newCommentText: "",
+        comments: [...state.comments, comment],
+      };
+
     default:
       return state;
   }

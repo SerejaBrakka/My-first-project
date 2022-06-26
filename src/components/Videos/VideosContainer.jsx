@@ -1,34 +1,23 @@
-import React from "react";
 import { addCommentActionCreator } from "../../redux/videos-reducer";
 import { updateNewCommentActionCreator } from "../../redux/videos-reducer";
-import StoreContext from "../../storeContext";
 import Videos from "./Videos";
+import { connect } from "react-redux";
 
-const VideosContainer = (props) => {
-  return (
-    <StoreContext.Consumer>
-      {(store) => {
-        let state = store.getState().videosPage;
-
-        let onSendCommentClick = () => {
-          store.dispatch(addCommentActionCreator());
-        };
-
-        let onNewCommentChange = (text) => {
-          store.dispatch(updateNewCommentActionCreator(text));
-        };
-
-        return (
-          <Videos
-            addComment={onSendCommentClick}
-            updateNewComment={onNewCommentChange}
-            comments={state.comments}
-            newCommentText={state.newCommentText}
-          />
-        );
-      }}
-    </StoreContext.Consumer>
-  );
+let mapStateToProps = (state) => {
+  return {
+    comments: state.videosPage.comments,
+    newCommentText: state.videosPage.newCommentText,
+  };
 };
-
+let mapDispatchToProps = (dispatch) => {
+  return {
+    addComment: () => {
+      dispatch(addCommentActionCreator());
+    },
+    updateNewComment: (text) => {
+      dispatch(updateNewCommentActionCreator(text));
+    },
+  };
+};
+const VideosContainer = connect(mapStateToProps, mapDispatchToProps)(Videos);
 export default VideosContainer;
