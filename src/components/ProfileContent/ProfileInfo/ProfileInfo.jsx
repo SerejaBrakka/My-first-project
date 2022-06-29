@@ -20,7 +20,7 @@ const ProfileInfo = (props) => {
           <div>{props.profile.fullName}</div>
           <div> {props.profile.aboutMe}</div>
           <div className={classes.socialStyle}>
-            <div>My Social</div>
+            <div>My Socials</div>
             <div>Github : {props.profile.contacts.github}</div>
             <div>Github : {props.profile.contacts.vk}</div>
             <div>Github : {props.profile.contacts.instagram}</div>
