@@ -11,6 +11,5 @@
 
 .app-wrapper-content {
   grid-area: content;
-  color: black;
   margin: 10px;
 }

@@ -35,12 +35,12 @@ const videosReducer = (state = initialState, action) => {
       return state;
   }
 };
-export const addCommentActionCreator = () => {
+export const addComment = () => {
   return {
     type: ADD_COMMENT,
   };
 };
-export const updateNewCommentActionCreator = (text) => {
+export const updateNewComment = (text) => {
   return {
     type: UPDATE_NEW_COMMENT,
     newCommentText: text,

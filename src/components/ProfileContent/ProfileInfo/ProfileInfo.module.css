@@ -9,4 +9,11 @@
 
 .descriptionBlock {
   padding: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.socialStyle {
+  font-size: 20px;
+  color: white;
 }
