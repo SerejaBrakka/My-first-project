@@ -1,7 +1,6 @@
-import React from "react";
-import styles from "./Users.module.css";
-import userPhoto from "./../../assets/images/user.png";
 import { NavLink } from "react-router-dom";
+import userPhoto from "./../../assets/images/user.png";
+import styles from "./Users.module.css";
 
 let Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -15,6 +14,7 @@ let Users = (props) => {
         {pages.map((p) => {
           return (
             <span
+              key={p.toString()}
               onClick={(e) => {
                 props.onPageChanged(p);
               }}
@@ -43,6 +43,7 @@ let Users = (props) => {
             <div>
               {u.followed ? (
                 <button
+                  disabled={props.followingInProgress.some((id) => id == u.id)}
                   onClick={() => {
                     props.unfollow(u.id);
                   }}
@@ -51,6 +52,7 @@ let Users = (props) => {
                 </button>
               ) : (
                 <button
+                  disabled={props.followingInProgress.some((id) => id == u.id)}
                   onClick={() => {
                     props.follow(u.id);
                   }}
