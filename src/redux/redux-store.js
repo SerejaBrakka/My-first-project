@@ -7,6 +7,7 @@ import sidebarReducer from "./sidebar-reducer";
 import usersReducer from "./users-reducer";
 import videosReducer from "./videos-reducer";
 
+
 let reducers = combineReducers({
   profilePage: profileReducer,
   dialogsPage: dialogsReducer,
@@ -14,6 +15,7 @@ let reducers = combineReducers({
   sidebar: sidebarReducer,
   usersPage: usersReducer,
   auth: authReducer,
+
 });
 
 let store = legacy_createStore(reducers, applyMiddleware(thunkMiddleWare));

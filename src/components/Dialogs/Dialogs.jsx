@@ -1,7 +1,8 @@
 import React from "react";
+import { Navigate } from "react-router-dom";
+import DialogItem from "./DialogItem/DialogItem";
 import classes from "./Dialogs.module.css";
 import Message from "./Message/Message";
-import DialogItem from "./DialogItem/DialogItem";
 
 class Dialogs extends React.Component {
   constructor(props) {
@@ -24,6 +25,8 @@ class Dialogs extends React.Component {
     let messagesElement = state.messages.map((m) => {
       return <Message message={m.message} key={m.id} />;
     });
+    if (!this.props.isAuth) return <Navigate to="/login" />;
+
     return (
       <div className={classes.dialogs}>
         <div className={classes.dialogsItems}>{dialogsElement}</div>

@@ -10,6 +10,7 @@ import ProfileContainer from "./components/ProfileContent/ProfileContainer";
 import Settings from "./components/Settings/Settings";
 import UsersContainer from "./components/Users/UsersContainer";
 import VideosContainer from "./components/Videos/VideosContainer";
+import LoginPage from "./components/Login/Login";
 
 const App = (props) => {
   return (
@@ -27,6 +28,7 @@ const App = (props) => {
           <Route path="/settings" element={<Settings />} />
           <Route path="/videos" element={<VideosContainer />} />
           <Route path="/users" element={<UsersContainer />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </div>
     </div>
